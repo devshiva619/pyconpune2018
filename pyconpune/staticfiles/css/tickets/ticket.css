@@ -1,0 +1,63 @@
+.razorpay-payment-button {
+        padding: 12px 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        border: 2px solid #333;
+        text-decoration: none;
+        transition: .2s ease-in;
+        color: #333;
+        border-radius: 0;
+        background-color: white;
+}
+.razorpay-payment-button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.errorlist {
+    color: #e74c3c;
+}
+.ticket {
+    cursor: pointer;
+}
+.ticket-divider {
+    margin: 1.5rem 3rem 0 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #ededed;
+}
+.ticket-inner {
+    border: .5em solid #333;
+    min-height: 50em;
+}
+.ticket-inner:hover {
+    border: .5em solid #1ac11a;
+}
+.ticket-title {
+    height: 5em;
+}
+.ticket-description {
+    min-height: 12em;
+}
+.ticket-row {
+    margin-top: 3em;
+}
+.ticket-disabled {
+    opacity: 0.1;
+}
+.navbar-custom {
+    background: black;
+}
+.clear {
+    clear: both;
+}
+.no-margin {
+    margin: 0;
+}
+.card-header {
+    padding:1em;
+    background-color: #363c32;
+}
+.mb-3 {
+    margin-bottom: 3em;
+}

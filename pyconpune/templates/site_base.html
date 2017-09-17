@@ -1,0 +1,147 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Official Website for PyCon Pune 2018">
+    <meta name="author" content="">
+    <meta property="og:image" content="../img/twitter.png" />
+    <link href="{% static '/img/twitter.png' %}" rel="shortcut icon" />
+
+    <title>PyCon Pune 2018 {% block title %}{% endblock %}</title>
+
+    {% block header %}
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href='{% static "css/main.css" %}' rel="stylesheet">
+    <link href='{% static "css/standard.css" %}' rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+    {% block extraheader %}{% endblock %}
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    {% block navigation %}
+        <header class="header full-width">
+        <div class="col-960 col-center full-height">
+            <div class="mobile-only mobile-menu-btn"></div>
+            <img class="logo float-left" src='{% static "img/logo.png" %}' />
+            <ul class="nav-menu">
+                <li><a href="{% url 'homepage' %}#about">About</a></li>
+                <!-- <li><a href="#">Schedule</a></li> -->
+                <!--<li><a href="#">Venue</a></li>-->
+                <!--<li><a href="#">Registration</a></li>-->
+                <li><a href="{% url 'homepage' %}#speakers">Speakers</a></li>
+                <li><a href="{% url 'homepage' %}#sponsor">Sponsors</a></li>
+                <li><a href="{% url 'coc' %}">CoC</a></li>
+                <li>
+                    <a href="#" class="hide inline-block">
+                        <button class="btn btn-primary buy-tickets-btn">Buy Tickets</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+
+    <footer class="gray-bg">
+        <section class="no-margin float-left full-width">
+            <div class="full-width">
+                <div class="col-center full-height">
+                    <div class="footer inline-block">
+
+                        <div>
+                            <div class="footer-block">
+                                <div class="bold caps">About</div>
+                                <div>What is PyCon Pune?</div>
+                                <a href="{% url 'coc' %}">
+                                    <div>Code of Conduct</div>
+                                </a>
+                                <div>Vounteers</div>
+                                <div>Childcare</div>
+                            </div>
+                            <div class="footer-block">
+                                <div class="bold caps">Schedule</div>
+                                <div>Full Schedule</div>
+                                <div>Keynote Speakers</div>
+                                <div>Sprint Information</div>
+                            </div>
+                            <div class="footer-block">
+                                <div class="bold caps">Venue</div>
+                                <div>About Pune & Venue</div>
+                                <div>Travelling to Pune</div>
+                                <div>Accessibility</div>
+                            </div>
+                            <div class="footer-block">
+                                <div class="bold caps">Be A</div>
+                                <div>Be a Sponsor</div>
+                                <div>Be a Volunteer</div>
+                            </div>
+                        </div>
+
+
+                        <div class="footer-block">
+                            <div>Copyright &copy; PyCon Pune 2018.</div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.237602016919!2d73.93952795009344!3d18.518161987348577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c22161862853%3A0x5ed70272d869e104!2sAmanora+The+Fern+Hotels+and+Club!5e0!3m2!1sen!2sin!4v1500404348864" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>      
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-86644340-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Theme JavaScript -->
+    <script src='{% static "js/common.js" %}'></script>
+    {% block extrajs %}{% endblock %}
+
+</body>
+
+</html>

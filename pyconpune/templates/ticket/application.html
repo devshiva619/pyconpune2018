@@ -1,0 +1,78 @@
+{% extends "inner_site_base.html" %}
+
+{% load staticfiles %}
+
+{% block extraheader %}
+    <link href='{% static "css/tickets/ticket.css" %}' rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<!-- Ticket v0 Section -->
+<section id="ticket" class="content-section text-center" style="color: black; background-color:white; width:100%;padding-bottom:5em">
+  <div class="row container" style="margin:auto; text-align: left;">
+    <div class="col-lg-12">
+      <h2 class="no-text-transform">Tickets</h2>
+      <div class="underline"></div>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card mb-3">
+          <div class="card-header" role="tab" id="ticket-row-header-1">
+            <h4 class="mb-0 no-margin">
+              <a data-toggle="collapse" data-parent="#accordion" href="#ticket-row-1" aria-expanded="true" aria-controls="ticket-row-1">
+                Select the ticket to buy?
+              </a>
+            </h4>
+          </div>
+          <div id="ticket-row-1" class="ticket-row collapse" role="tabpanel" aria-labelledby="ticket-row-heading-1">
+            <div class="card-block">
+              {% include "ticket/select_ticket.html" %}
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header" role="tab" id="ticket-row-header-2">
+            <h4 class="mb-0 no-margin">
+              <a data-toggle="collapse" data-parent="#accordion" href="#ticket-row-2" aria-expanded="true" aria-controls="ticket-row-2">
+                Extra tickets
+              </a>
+            </h4>
+          </div>
+
+          <div id="ticket-row-2" class="ticket-row collapse" role="tabpanel" aria-labelledby="ticket-row-heading-2">
+            <div class="card-block">
+              {% include "ticket/select_auxillary_ticket.html" %}
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header mb-10" role="tab" id="ticket-row-header-3">
+            <h4 class="mb-0 no-margin">
+              <a data-toggle="collapse" data-parent="#accordion" href="#ticket-row-3" aria-expanded="true" aria-controls="ticket-row-3">
+                Please enter your details
+              </a>
+            </h4>
+          </div>
+
+          <div id="ticket-row-3" class="ticket-row collapse" role="tabpanel" aria-labelledby="ticket-row-heading-3">
+            <div class="card-block col-lg-9">
+              {% include "ticket/user_details.html" %}
+              <div class="clear"></div>
+            </div>
+            <div class="card-block col-lg-3">
+              {% include "ticket/order_detail.html" %}
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'js/tickets/ticket.js' %}">   </script>
+{% endblock %}
